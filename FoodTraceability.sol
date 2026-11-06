@@ -22,7 +22,7 @@ contract FoodTraceability {
             productName: _productName,
             sender: msg.sender,
             receiver: _receiver,
-            status: "Creado en Origen",
+            status: "Origin Created",
             timestamp: block.timestamp
         });
 

@@ -1,0 +1,10 @@
+{
+  "FoodTraceability.sol": {
+    "__sources__": {
+      "FoodTraceability.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract FoodTraceability {\n    struct FoodBatch {\n        string batchId;\n        string productName;\n        address sender;\n        address receiver;\n        string status;\n        uint256 timestamp;\n    }\n\n    mapping(string => FoodBatch) public foodBatches;\n\n    event BatchCreated(string batchId, string productName, address indexed sender);\n    event StatusUpdated(string batchId, string status, address indexed updatedBy);\n\n    function createBatch(string memory _batchId, string memory _productName, address _receiver) public {\n        foodBatches[_batchId] = FoodBatch({\n            batchId: _batchId,\n            productName: _productName,\n            sender: msg.sender,\n            receiver: _receiver,\n            status: \"Origin Created\",\n            timestamp: block.timestamp\n        });\n\n        emit BatchCreated(_batchId, _productName, msg.sender);\n    }\n}",
+        "file": "FoodTraceability.sol"
+      }
+    }
+  }
+}
