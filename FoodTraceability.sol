@@ -22,10 +22,17 @@ contract FoodTraceability {
             productName: _productName,
             sender: msg.sender,
             receiver: _receiver,
-            status: "Origin Created",
+            status: "Created at Origin",
             timestamp: block.timestamp
         });
 
         emit BatchCreated(_batchId, _productName, msg.sender);
     }
+        // Function to update the status of an existing food batch
+    function updateStatus(string memory _batchId, string memory _newStatus) public {
+        require(bytes(foodBatches[_batchId].batchId).length > 0, "Batch does not exist");
+        foodBatches[_batchId].status = _newStatus;
+
+        emit StatusUpdated(_batchId, _newStatus, msg.sender);
 }
+    }

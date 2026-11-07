@@ -121,6 +121,24 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_batchId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_newStatus",
+						"type": "string"
+					}
+				],
+				"name": "updateStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -151,11 +169,11 @@
 	},
 	"sources": {
 		"FoodTraceability.sol": {
-			"keccak256": "0x7f72ad39eec041795920e4920bf295c05046feb627c38ae8e82f8c547d558a22",
+			"keccak256": "0x4107f76b255eef468e3a3242a033e149619b713ce97c44c9965b3c5ee6505c50",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5c0e7028f8612293446fda04fe5866523d10263d9f90b187d8a69a5868926e60",
-				"dweb:/ipfs/QmVzvUFP6zw8FQnpKJGCQrzhBHaiTK9ew3uwAtpoK3kdbf"
+				"bzz-raw://78b2c7747f591f3151ae984b84fe7bfe30e980fb6e891f1311df8f860d880baa",
+				"dweb:/ipfs/QmPEjTzMvWAirc1xyutyVEUeY2WQVWL9mXUks9VtCDjfNU"
 			]
 		}
 	},
