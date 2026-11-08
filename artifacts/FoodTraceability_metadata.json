@@ -142,13 +142,39 @@
 			}
 		],
 		"devdoc": {
+			"author": "Sara Baires 2024543",
+			"details": "Smart contract for tracking food supply chain batches, origin and status updates.",
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"createBatch(string,string,address)": {
+					"details": "Stores batch details in the mapping and emits a BatchCreated event.",
+					"params": {
+						"_batchId": "Unique identifier for the food batch.",
+						"_productName": "Name or description of the food product.",
+						"_receiver": "Ethereum address designated as the recipient of the batch."
+					}
+				},
+				"updateStatus(string,string)": {
+					"details": "Reverts if the batch does not exist. Emits a StatusUpdated event.",
+					"params": {
+						"_batchId": "Unique identifier of the target batch.",
+						"_newStatus": "The updated operational status (e.g., \"In Transit\", \"Delivered\")."
+					}
+				}
+			},
+			"title": "FoodTracability ",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"createBatch(string,string,address)": {
+					"notice": "Creates a new food batch in the supply chain system."
+				},
+				"updateStatus(string,string)": {
+					"notice": "Updates the status of an existing food batch."
+				}
+			},
 			"version": 1
 		}
 	},
@@ -169,11 +195,11 @@
 	},
 	"sources": {
 		"FoodTraceability.sol": {
-			"keccak256": "0x4107f76b255eef468e3a3242a033e149619b713ce97c44c9965b3c5ee6505c50",
+			"keccak256": "0x1c4229391753080c443c8e503e5e8bdcc039af292be7f05e79c07a724f580a0e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://78b2c7747f591f3151ae984b84fe7bfe30e980fb6e891f1311df8f860d880baa",
-				"dweb:/ipfs/QmPEjTzMvWAirc1xyutyVEUeY2WQVWL9mXUks9VtCDjfNU"
+				"bzz-raw://095a54c90b94c6814d1ef2623dcc7e000d335d64e07bc60b39fe4637a1b19aeb",
+				"dweb:/ipfs/QmNatEyVDsjaxa8czdqrpNQxaCEyPSPjbguWVneYFMvf5c"
 			]
 		}
 	},
